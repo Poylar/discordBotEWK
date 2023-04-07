@@ -4,6 +4,10 @@ const fs = require("fs");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const events = require("./client/voiceStamp");
+
+const dotevn = require("dotenv");
+
+dotevn.config();
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -14,9 +18,7 @@ const client = new Client({
   ],
 });
 
-let config = require("./config.json");
-let token = config.token;
-let prefix = config.prefix;
+const DISCORD_TOKEN = process.env.TOKEN;
 
 client.commands = new Collection();
 
@@ -72,4 +74,4 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
 });
 
-client.login(token);
+client.login(DISCORD_TOKEN);
