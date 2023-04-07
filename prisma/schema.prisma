@@ -13,4 +13,5 @@ datasource db {
 model UserTimeStamp {
   userId    String @unique
   timeSpent Int
+  userName  String
 }

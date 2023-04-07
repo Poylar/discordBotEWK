@@ -23,6 +23,7 @@ function voiceStamp(client, prisma) {
           data: {
             userId: newState.member.id,
             timeSpent: timeSpent,
+            userName: newState.member.displayName,
           },
         });
       } else {
@@ -32,6 +33,7 @@ function voiceStamp(client, prisma) {
           },
           data: {
             timeSpent: users[0].timeSpent + timeSpent,
+            userName: newState.member.displayName,
           },
         });
       }

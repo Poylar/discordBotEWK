@@ -5,6 +5,8 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const events = require("./client/voiceStamp");
 
+const config = require("./config.json");
+
 const dotevn = require("dotenv");
 
 dotevn.config();
@@ -19,6 +21,7 @@ const client = new Client({
 });
 
 const DISCORD_TOKEN = process.env.TOKEN;
+
 
 client.commands = new Collection();
 

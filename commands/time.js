@@ -61,9 +61,8 @@ module.exports = {
       );
       const seconds = Math.floor((time.timeSpent % (60 * 1000)) / 1000);
       const formattedTime = `${days} дней, ${hours} часов, ${minutes} минут и ${seconds} секунд`;
-      message += `${
-        interaction.client.users.cache.get(time.userId).username
-      } - ${formattedTime}
+      message += `${time.userName}
+         - ${formattedTime}
     `;
     });
     await interaction.reply(message);
